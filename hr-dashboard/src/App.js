@@ -1,13 +1,13 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './src/components/Sidebar';
-import ResumeUpload from './src/components/HR/ResumeUpload';
-import InterviewScheduler from './src/components/HR/InterviewScheduler';
-import ProjectCreation from './src/components/PM/ProjectCreation';
-import EmployeeAssignment from './src/components/PM/EmployeeAssignment';
-import ProjectList from './src/components/ProjectList';
-import DashboardHome from './src/components/DashboardHome'; // New default dashboard component
+import Sidebar from './components/Sidebar';
+import ResumeUpload from './components/HR/ResumeUpload';
+import InterviewScheduler from './components/HR/InterviewScheduler';
+import ProjectCreation from './components/PM/ProjectCreation';
+import EmployeeAssignment from './components/PM/EmployeeAssignment';
+import ProjectList from './components/ProjectList';
+import DashboardHome from './components/DashboardHome'; // New default dashboard component
 function App() {
   return (
     <Router>
