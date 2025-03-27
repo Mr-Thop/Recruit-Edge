@@ -7,7 +7,7 @@ import psycopg2
 from pypdf import PdfReader
 from flask_cors import CORS# Import your modules (make sure they are in your PYTHONPATH or same directory)
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
-from google.generativeai import genai
+from google import genai
 from langchain_postgres import PGVector
 from langchain_core.documents import Document
 import pymysql
