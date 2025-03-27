@@ -239,7 +239,7 @@ app = Flask(__name__)
 CORS(app)  # This will allow all origins by default
 
 
-@app.route('/process_resumes', methods=['POST'])
+@app.route('/process_resumes', methods=['GET','POST'])
 def process_resumes():
     print("=== Received a POST request to /process_resumes ===")
     
@@ -376,7 +376,7 @@ def get_projects():
         return jsonify({"error": str(e)}), 500
 
 # Existing POST endpoint to create a new project and update its requirements
-@app.route('/api/projects', methods=['POST'])
+@app.route('/api/projects', methods=['GET','POST'])
 def create_project():
     data = request.get_json()
     name = data.get("name")
@@ -407,7 +407,7 @@ def create_project():
         return jsonify({"error": str(e)}), 500
 
 # New endpoint: Assign team members for a given project ID
-@app.route('/api/assign-team/<int:project_id>', methods=['POST'])
+@app.route('/api/assign-team/<int:project_id>', methods=['GET','POST'])
 def assign_team(project_id):
     try:
         conn = connect_db()
@@ -662,7 +662,7 @@ def download_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
 
 # API endpoint to schedule interviews
-@app.route('/api/schedule', methods=['POST'])
+@app.route('/api/schedule', methods=['GET','POST'])
 def schedule_interviews():
     try:
         data = request.form
@@ -689,6 +689,10 @@ def schedule_interviews():
     except Exception as e:
         logging.error(f"Error scheduling interviews: {e}")
         return jsonify({'error': 'Failed to schedule interviews'}), 500
+
+@app.route('/')
+def home():
+    return "KRU.ai Backend is Running!"
 
 if __name__== "__main__":
     print("Starting Flask app in debug mode...")
