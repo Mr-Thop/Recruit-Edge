@@ -236,7 +236,7 @@ async def process_resumes_async(prompt, openings, resume_files):
     }
 
 app = Flask(__name__)
-CORS(app)  # This will allow all origins by default
+CORS(app, origins = "https://recruitedge.vercel.app/")
 
 
 @app.route('/process_resumes', methods=['GET','POST'])
