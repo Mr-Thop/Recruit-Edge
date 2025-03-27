@@ -684,7 +684,7 @@ def schedule_interviews():
         send_emails(scheduled_candidates,slot_length)
 
         # Return the URL for downloading the file
-        download_url = f'http://localhost:5000/download/{filename}'
+        download_url = f'https://recruit-edge-ld6y.onrender.com/download/{filename}'
         return jsonify({'message': 'Interviews scheduled successfully!', 'file_url': download_url})
     except Exception as e:
         logging.error(f"Error scheduling interviews: {e}")
