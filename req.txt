@@ -1,0 +1,14 @@
+langchain
+langchain-community
+pypdf
+langchain-google-genai
+langgraph
+pgvector
+pypdf
+psycopg2
+Flask-Cors
+Flask
+sentence-transformers
+pymysql
+cryptography
+gunicorn
