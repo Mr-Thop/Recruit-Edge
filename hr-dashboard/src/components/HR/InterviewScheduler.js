@@ -2,8 +2,8 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import styled, { keyframes } from 'styled-components';
 
-// Define the API URL from environment variable, fallback to your ngrok URL
-const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+// Define the API URL from environment variable, fallback to your render URL
+const apiUrl = process.env.REACT_APP_API_URL || 'https://recruit-edge-ld6y.onrender.com';
 
 // Layout container for overall page
 const MainContent = styled.div`

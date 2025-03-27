@@ -171,7 +171,7 @@ const EmployeeAssignment = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/assign-team/${projectId}`);
+      const response = await axios.post(`https://recruit-edge-ld6y.onrender.com/api/assign-team/${projectId}`);
       setAssignments(response.data.assignments);
     } catch (err) {
       setError('Error fetching team assignments. Please check the project ID.');
