@@ -236,7 +236,7 @@ async def process_resumes_async(prompt, openings, resume_files):
     }
 
 app = Flask(__name__)
-CORS(app, origins = "https://recruitedge.vercel.app/")
+CORS(app)
 
 
 @app.route('/process_resumes', methods=['GET','POST'])
@@ -692,7 +692,7 @@ def schedule_interviews():
 
 @app.route('/')
 def home():
-    return "KRU.ai Backend is Running!"
+    return "Recruit Edge Backend is Running!"
 
 if __name__== "__main__":
     print("Starting Flask app in debug mode...")

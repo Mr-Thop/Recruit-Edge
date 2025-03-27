@@ -274,12 +274,14 @@ const ResumeUpload = () => {
     });
 
     try {
-      const response = await axios.post(`${apiUrl}/process_resumes`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+      const response = await fetch('https://recruit-edge-ld6y.onrender.com/process_resumes', {
+        method: 'POST',
+        body: formData // No need to manually set 'Content-Type'
       });
-      console.log('Raw backend response:', response.data);
+      console.log('Raw backend response:', response.json());
 
-      let data = response.data;
+      let data = response.json();
+      console.log(data)
       // If response is a string, try to extract JSON
       if (typeof data === 'string') {
         const start = data.indexOf('{');
