@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 33% 97%;
+    --foreground: 0 0% 12%;
+
+    --card: 45 33% 97%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 45 33% 97%;
+    --popover-foreground: 0 0% 12%;
+
+    --primary: 187 100% 24%;
+    --primary-foreground: 45 33% 97%;
+
+    --secondary: 173 46% 64%;
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 45 33% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 173 46% 64%;
+    --accent-foreground: 0 0% 12%;
+
+    --destructive: 352 69% 56%;
+    --destructive-foreground: 45 33% 97%;
+
+    --border: 45 33% 90%;
+    --input: 45 33% 90%;
+    --ring: 187 100% 24%;
+
+    --radius: 0.5rem;
+
+    --error: 352 69% 56%;
+    --success: 173 58% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Page transition animations */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Loading animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
