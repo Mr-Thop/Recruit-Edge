@@ -184,8 +184,8 @@ export default function ResumeManagement() {
   const extractRating = (outputText: string): string => {
     if (!outputText) return "0"
 
-    // Look for patterns like "7.5/10" or "7.7/10"
-    const ratingRegex = /(\d+\.\d+)\/10/
+    // Look for patterns like "7.5/10" or "7/10"
+    const ratingRegex = /(\d+(?:\.\d+)?)\/10/;
     const match = outputText.match(ratingRegex)
 
     if (match && match[1]) {
